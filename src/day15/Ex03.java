@@ -18,7 +18,7 @@ class clock extends Thread{
 		Container c = frame.getContentPane();
 		JLabel label = new JLabel();		
 		Font font = new Font(null,0,32);
-		label.setFont(font);
+		label.setFont(font); 
 		label.setHorizontalAlignment(JLabel.CENTER);
 		
 		
