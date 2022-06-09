@@ -14,7 +14,7 @@ class clock extends Thread{
 	public void run() {
 		A03 a = new A03();
 		B03 b = new B03();
-		JFrame frame = new JFrame("¿¬½À");
+		JFrame frame = new JFrame("ì—°ìŠµ");
 		Container c = frame.getContentPane();
 		JLabel label = new JLabel();		
 		Font font = new Font(null,0,32);
@@ -54,7 +54,7 @@ class A03 extends Thread{
 		int ch;
 		if(cookie ==0) {
 			while(true) {
-				System.out.println("1. ·Î±×ÀÎ 2.°¡ÀÔ 3.·Î±×¾Æ¿ô");
+				System.out.println("1. ë¡œê·¸ì¸ 2.ê°€ì… 3.ë¡œê·¸ì•„ì›ƒ");
 				System.out.print(">>> ");
 				ch = scan.nextInt();
 				if(ch == 1) {
@@ -62,12 +62,12 @@ class A03 extends Thread{
 				}else if(ch == 2) {
 					signin();					
 				}else if(ch ==3) {
-					System.out.println("·Î±×ÀÎ µÇ¾îÀÖÁö ¾Ê½À´Ï´Ù");
+					System.out.println("ë¡œê·¸ì¸ ë˜ì–´ìˆì§€ ì•ŠìŠµë‹ˆë‹¤");
 					continue;
 				}
 			}
 		}else if(cookie==1) {
-			System.out.println("1.³»Á¤º¸ 2.·Î±×¾Æ¿ô");
+			System.out.println("1.ë‚´ì •ë³´ 2.ë¡œê·¸ì•„ì›ƒ");
 			System.out.print(">>> ");
 			ch = scan.nextInt();
 			if(ch == 1) {
@@ -80,27 +80,27 @@ class A03 extends Thread{
 	}
 	public void signin() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("°¡ÀÔÇÒ ¾ÆÀÌµğ ÀÔ·Â : ");
+		System.out.print("ê°€ì…í•  ì•„ì´ë”” ì…ë ¥ : ");
 		id = scan.next();
-		System.out.print("ºñ¹Ğ¹øÈ£ ÀÔ·Â : ");
+		System.out.print("ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ : ");
 		pw=scan.next();
-		System.out.println("°¡ÀÔ ¿Ï·á");
+		System.out.println("ê°€ì… ì™„ë£Œ");
 	}
 	
 	
 	public void login() {
 		Scanner scan = new Scanner(System.in);
 		while(true) {
-			System.out.print("¾ÆÀÌµğ : ");
+			System.out.print("ì•„ì´ë”” : ");
 			String loginId= scan.next();
 			if(loginId == null||!loginId.equals(id)) {
-				System.out.println("¾ÆÀÌµğ°¡ Æ²·È½À´Ï´Ù");
+				System.out.println("ì•„ì´ë””ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤");
 				break;
 			}else {
-				System.out.print("ºñ¹Ğ¹øÈ£ : ");
+				System.out.print("ë¹„ë°€ë²ˆí˜¸ : ");
 				String loginPw = scan.next();
 				if(loginPw ==null||!loginPw.equals(pw)) {
-					System.out.println("ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù");
+					System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤");
 					break;
 				}else {
 					cookie++;
@@ -116,32 +116,32 @@ class A03 extends Thread{
 		clock c = new clock();		
 		c.start();
 		Scanner scan = new Scanner(System.in);
-		System.out.println("ÀÎÁõ ¼º°ø!");
+		System.out.println("ì¸ì¦ ì„±ê³µ!");
 		while(true) {
-			System.out.println("==== È¯¿µÇÕ´Ï´Ù ====");
-			System.out.println("1.±â´É");
+			System.out.println("==== í™˜ì˜í•©ë‹ˆë‹¤ ====");
+			System.out.println("1.ê¸°ëŠ¥");
 			System.out.println("2.off");
 			System.out.print(">>> ");
 			int ch2=scan.nextInt();
 			if(ch2 ==1) {
-				System.out.println("±â´É ½ÃÀÛ");
+				System.out.println("ê¸°ëŠ¥ ì‹œì‘");
 			}else if(ch2 ==2) {
-				System.out.println("±â´ÉÁ¾·á");
+				System.out.println("ê¸°ëŠ¥ì¢…ë£Œ");
 				break;
 			}
 		}
 	}
 	
 	public void logout() {		
-		System.out.println("·Î±×¾Æ¿ôÇÕ´Ï´Ù");
+		System.out.println("ë¡œê·¸ì•„ì›ƒí•©ë‹ˆë‹¤");
 		if(cookie==1) {
 			cookie--;
 			}
 		display();
 	}
 	public void mypage() {
-		System.out.println("³» ¾ÆÀÌµğ : "+id);
-		System.out.println("³» ºñ¹Ğ¹øÈ£ : "+pw);
+		System.out.println("ë‚´ ì•„ì´ë”” : "+id);
+		System.out.println("ë‚´ ë¹„ë°€ë²ˆí˜¸ : "+pw);
 		
 	}
 	
@@ -150,7 +150,7 @@ class A03 extends Thread{
 class B03 extends Thread{
 
 	public String dateset() throws InterruptedException {
-		SimpleDateFormat simpl = new SimpleDateFormat("a hh½Ã mmºĞ ssÃÊ");
+		SimpleDateFormat simpl = new SimpleDateFormat("a hhì‹œ mmë¶„ ssì´ˆ");
 		for(int i=0;;i++) {
 			Date date = new Date();
 			String time = simpl.format(date);
@@ -173,7 +173,3 @@ public class Ex03 {
 	}
 
 }
-
-
-
-
